@@ -1,0 +1,532 @@
+@charset "utf-8";
+
+
+
+/* ********************************************
+// --- リセット ---
+// ※ブラウザのデフォルトCSSをリセット
+// ***************************************** */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: Verdana, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+    background-color: #F9F6DF;
+
+}
+
+header,
+footer,
+nav,
+menu,
+article,
+aside,
+section,
+details,
+figcaption,
+figure {
+    display: block;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+img {
+    vertical-align: bottom;
+}
+
+a img {
+    border: none;
+}
+
+strong {
+    font-weight: normal;
+}
+
+i {
+    font-style: normal;
+}
+
+/* ------------------------------------------------------------------------- */
+/* 共通フォント */
+.fonts_goudy {
+    font-family: "Sorts Mill Goudy", serif;
+    text-decoration: none;
+    color: #333;
+}
+
+
+.sp {
+    display: none;
+}
+
+#sp {
+    display: none;
+}
+
+
+
+
+
+.inner {
+    height: 15vh;
+    padding: 0 5vw;
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+}
+.header.change-color {
+    background-color: #FBE5D2;
+    transition: 0.3s;
+}
+.header-inner {
+    display: flex;
+    align-items: center;
+}
+.header-title a {
+    color: #000;
+    font-size: 4rem;
+    text-decoration: none;
+}
+
+.header-nav {
+    margin-left: auto;
+}
+.header-nav-list {
+    display: flex;
+}
+.header-nav-item:not(:first-child) {
+    margin-left: 10vw;
+}
+.header-nav-item-link {
+    display: block;
+    color: #fff;
+}
+
+
+.link {
+    text-decoration: none;
+    font-size: 3rem;
+    color: #000;
+}
+
+
+
+
+  
+.fv {
+    width: 100vw;
+    height: 100vh;
+    background: url("/img/pc_top_img_gradation/pc_top_img_5.png");
+    background-size: cover;
+    background-position: bottom;
+    position: relative;
+    z-index: 1;
+}
+  
+.fv::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+  
+
+
+
+
+/* aboutへの指定 */
+#about {
+    text-align: center;
+}
+.section_title {
+    padding: 20vh 0 10vh 0;
+    font-size: 4rem;
+    margin: 0 5vw;
+}
+
+#about .about_txt {
+    height: 40vh;
+    display: flex;
+    margin: 0 5vw;
+}
+
+#about .about_txt p {
+    font-size: 2rem;
+    text-align: left;
+    line-height: 2;
+}
+
+#about .about_txt .about_img {
+    height: 40vh;
+    margin-left: 5vw;
+}
+
+#about .about_txt .about_img img{
+    height: 100%;
+    border-radius: 5%;
+}
+
+
+
+
+
+/* #trimmingへの指定 */
+#trimming{
+    text-align: center;
+}
+
+#trimming .trimming_img img {
+    margin: 0 10px 20vh 10px;
+}
+
+
+#trimming .trimming_img .child{
+    position: relative;
+    top: 185px;
+}
+
+#trimming .trimming_img .grandchild{
+    position: relative;
+    top: 370px;
+}
+
+
+
+
+
+
+
+
+
+/* footerへの指定 */
+footer {
+    text-align: center;
+    background-color: #FBE5D2;
+    margin-top: 20vh;
+    padding: 20px 0 20px 0;
+}
+
+footer .instagram {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+
+footer .instagram p {
+    font-size: 1.25rem;
+}
+
+footer .instagram img {
+    height: 50px;
+    width: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:600px) {
+
+    /* headerのheight */
+    .inner {
+        height: 12vh;
+    }
+
+    /* header_logoの大きさ */
+    .header-title a {
+        font-size: 3rem;
+    }
+
+
+    /* ここから下がハンバーガーメニューに関するCSS */
+    .sp {
+        display: block;
+    }
+    /* チェックボックスを非表示にする */
+    .drawer_hidden {
+        display: none;
+    }
+
+    .header-inner {
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+
+/* ハンバーガーアイコンの設置スペース */
+    .drawer_open {
+        display: flex;
+        height: 60px;
+        width: 60px;
+        align-items: center;
+        position: relative;
+        z-index: 100;
+        /* 重なり順を一番上にする */
+        cursor: pointer;
+        float: right;
+    }
+
+
+
+    /* ハンバーガーメニューのアイコン */
+    .drawer_open span,
+    .drawer_open span:before,
+    .drawer_open span:after {
+        content: '';
+        display: block;
+        height: 5px;
+        width: 40px;
+        border-radius: 3px;
+        background: #333;
+        transition: 0.5s;
+        position: absolute;
+    }
+
+    /* 三本線の一番上の棒の位置調整 */
+    .drawer_open span:before {
+        bottom: 8px;
+    }
+
+    /* 三本線の一番下の棒の位置調整 */
+    .drawer_open span:after {
+        top: 8px;
+    }
+
+    /* アイコンがクリックされたら真ん中の線を透明にする */
+    #drawer_input:checked~.drawer_open span {
+        background: rgba(255, 255, 255, 0);
+    }
+
+    /* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+    #drawer_input:checked~.drawer_open span::before {
+        bottom: 0;
+        transform: rotate(45deg);
+    }
+
+    #drawer_input:checked~.drawer_open span::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+
+    /* メニューのデザイン*/
+    .header-nav {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0%;
+        right: -100%;
+        /* メニューを画面の外に飛ばす */
+        z-index: 99;
+        background: #FBE5D2;
+        transition: .5s;
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    /* メニュー黒ポチを消す */
+    .header-nav-list {
+        list-style: none;
+    }
+
+    .header-nav .header-nav-list .header-nav-item{
+        float: none;
+
+        font-size: 30px;
+        line-height: 2.5;
+    }
+
+    
+
+
+    /* アイコンがクリックされたらメニューを表示 */
+    #drawer_input:checked~.header-nav {
+        right: 0;
+        /* メニューを画面に入れる */
+    }
+
+
+    /* メニューのCSS */
+    .header-nav-list {
+        display: block;
+    }
+    .header-nav-item:not(:first-child) {
+        margin: 0 auto;
+    }
+    .header-nav-item-link {
+        display: block;
+        color: #000;
+    }
+
+
+    .link {
+        font-size: 2rem;
+        text-decoration: underline;
+    }
+
+    #sp img {
+        height: 50px;
+    }
+
+    #sp a {
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+
+
+
+
+    /* header_logo */
+
+    header .logo img {
+        width: 15vw;
+    }
+        /* MENUの表示をする */
+    #sp{
+        font-size: 1.8rem;
+        display: block !important;
+    }
+
+
+
+
+
+
+
+    /* top画像 */
+    .fv {
+        height: 100svh;
+        background: url("/img/sp_top_img_gradation/sp_top_img02.png");
+        background-size: cover;
+        background-position: bottom;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* aboutへの指定 */
+    #about {
+        text-align: center;
+    }
+    .section_title {
+        font-size: 3rem;
+        margin: 0 5vw;
+    }
+
+    #about .about_txt {
+        height: 120vh;
+        display: block;
+        margin: 0 5vw;
+    }
+
+    #about .about_txt p {
+        font-size: 1.5rem;
+        line-height: 2;
+        margin-bottom: 5vh;
+        
+    }
+
+    #about .about_txt .about_img {
+        height: 40vh;
+        margin: 0 auto;
+        
+    }
+    
+    #about .about_txt .about_img img{
+        height: 100%;
+        border-radius: 5%;
+        margin: 0 auto;
+        
+    }
+
+
+
+
+
+
+
+
+
+
+    /* #trimmingへの指定 */
+    #trimming{
+        text-align: center;
+    }
+
+    #trimming .trimming_img img {
+        margin: 0 0 80px 0;
+        width: 80vw;
+    }
+
+    #trimming .trimming_img .parent{
+        float: left;
+    }
+
+
+    #trimming .trimming_img .child{
+        float: right;
+        position: static;
+        top : 0;
+    }
+
+    #trimming .trimming_img .grandchild{
+        position: static;
+        top: 0;
+    }
+
+
+}
+
+
+
+
+
